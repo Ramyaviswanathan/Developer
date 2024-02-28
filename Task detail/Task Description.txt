@@ -1,0 +1,14 @@
+Task Name:Vanilla
+
+Description:Make a reponsive website Using CSS Media Query.
+
+I have used Bootstrap for Navbar,remaining section i have used media queries for responsive.
+
+1.Media Query for mobile( max-width: 425px).
+
+2.Media Query for tab(min-width:768px) and (max-width:1023px).
+
+3.Media Query for laptop(min-width:1024px).
+
+
+
