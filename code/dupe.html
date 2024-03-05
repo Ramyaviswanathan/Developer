@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remove Duplicates</title>
+  <link rel="stylesheet" href="dupe.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Remove Duplicates from Array</h2>
+    <div class="input-container">
+      <label for="array">Enter Array:</label>
+      <input type="text" id="array" placeholder="e.g., 1, 2, 2, 3, 4, 4, 5">
+    </div>
+    <button onclick="removeDuplicates()">Output</button>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    function removeDuplicates() {
+      var inputArray = document.getElementById('array').value.split(',').map(function(item) {
+        return parseInt(item.trim(), 10);
+      });
+
+      var uniqueArray = Array.from(new Set(inputArray));
+
+      document.getElementById('output').innerText = 'Array without duplicates: [' + uniqueArray.join(', ') + ']';
+    }
+  </script>
+</body>
+</html>

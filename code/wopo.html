@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="All.css"/>
+
+    
+  </head>
+  <body>
+    <div class="container">
+      <h2> Word position</h2>
+      <label for="inputValues">Enter the Givenvalue</label>
+      <input type="text" id="givenvalue" />
+      <label for="inputValues">Enter the Searchvalue</label>
+      <input type="text" id="searchvalue" />
+      <button onclick="checkValues()">Check Values</button>
+      <div id="result"></div>
+    </div>
+  </body>
+  <script>
+    function checkValues() {
+      let get = document.getElementById("givenvalue").value;
+      let search = document.getElementById("searchvalue").value;
+      let index = get.indexOf(search);
+      let position = [];
+      while (index >= 0) {
+        position.push(index);
+        index = get.indexOf(search, index + 1);
+      }
+      let count = position.length;
+      document.getElementById("result").innerHTML =
+        "Positions: " + position.join(", ") + "<br>Total Occurrences: " + count;
+    }
+  </script>
+</html>

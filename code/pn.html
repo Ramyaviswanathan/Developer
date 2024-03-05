@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="All.css"/>
+
+
+  </head>
+  <body>
+    <div class="container">
+      <h2>Number is positive integer or<br> negative integer</h2>
+      <label for="inputValues">Enter the value</label>
+      <input type="text" id="givenvalue" />
+      <button onclick="checkValues()">Check Values</button>
+      <div id="result"></div>
+    </div>
+  </body>
+  <script>
+    function checkValues() {
+      let input = document.getElementById("givenvalue").value;
+      let resultParagraph = document.getElementById("result");
+      let num = parseInt(input);
+
+      if (isNaN(num)) {
+        resultParagraph.textContent = "Not a number";
+      } else if (num === 0) {
+        resultParagraph.textContent = "Zero";
+      } else if (num > 0) {
+        resultParagraph.textContent = "Positive number";
+      } else if (num < 0) {
+        resultParagraph.textContent = "Negative number";
+      } else {
+        resultParagraph.textContent = "Not an integer";
+      }
+    }
+  </script>
+</html>

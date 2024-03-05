@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      form {
+        /* display: flex; */
+        /* justify-content: center; */
+        width: 50%;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      select,
+      button {
+        width: 250px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .alert {
+        background-color: #f44336;
+        color: white;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+      }
+
+      /* .alert-success {
+        background-color: #4caf50;
+      } */
+    </style>
+  </head>
+  <body>
+    <form id="myForm">
+      <h2> Validate HTML form Fields</h2>
+
+        <label for="first_name">First Name:</label><br />
+        <input type="text" id="first_name" name="first_name" />
+        <br /><br />
+
+        <label for="last_name">Last Name:</label><br />
+        <input type="text" id="last_name" name="last_name" />
+        <br /><br />
+      <label for="dob">Date of Birth (yyyy/mm/dd):</label><br />
+      <input type="text" id="dob" name="dob" /><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="text" id="email" name="email" /><br /><br />
+
+      <label>Gender:</label><br />
+      <input type="radio" id="male" name="gender" value="male" /> Male<br />
+      <input type="radio" id="female" name="gender" value="female" />
+      Female<br />
+      <input type="radio" id="other" name="gender" value="other" />
+      Other<br /><br />
+
+      <label>Skills:</label><br />
+      <input type="checkbox" id="html" name="skill" value="HTML" /> HTML<br />
+      <input type="checkbox" id="css" name="skill" value="CSS" /> CSS<br />
+      <input type="checkbox" id="js" name="skill" value="JavaScript" />
+      JavaScript<br /><br />
+
+      <label for="nationality">Nationality:</label><br />
+      <select id="nationality" name="nationality">
+        <option value="">Select</option>
+        <option value="india">India</option>
+        <option value="japan">Japan</option>
+        <option value="canada">Canada</option></select
+      ><br /><br />
+
+      <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+  </body>
+  <script>
+    function validateForm() {
+      var firstName = document.getElementById("first_name").value;
+      var lastName = document.getElementById("last_name").value;
+      var dob = document.getElementById("dob").value;
+      var email = document.getElementById("email").value;
+      var gender = document.querySelector('input[name="gender"]:checked');
+      var skills = document.querySelectorAll('input[name="skill"]:checked');
+      var nationality = document.getElementById("nationality").value;
+
+      console.log(firstName, lastName, dob, email, gender, skills, nationality);
+
+      if (firstName === "") {
+        alert("First name must be filled out");
+        return false;
+      }
+
+      if (lastName === "") {
+        alert("Last name must be filled out");
+        return false;
+      }
+
+      if (!dob.match(/^\d{4}\/\d{2}\/\d{2}$/)) {
+        alert("Date of Birth must be in the format yyyy/mm/dd");
+        return false;
+      }
+
+      if (!email.match(/\S+@\S+\.\S+/)) {
+        alert("Invalid email address");
+        return false;
+      }
+
+      if (!gender) {
+        alert("Please select a gender");
+        return false;
+      }
+
+      if (skills.length === 0) {
+        alert("Please select at least one skill");
+        return false;
+      }
+
+      if (nationality === "") {
+        alert("Please select a nationality");
+        return false;
+      }
+
+      alert("Form submitted successfully");
+      return true;
+    }
+  </script>
+</html>

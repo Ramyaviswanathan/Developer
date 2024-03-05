@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="All.css"/>
+
+
+  </head>
+  <body>
+    <div class="container">
+      <h2>
+        Value is present or not in array &<br> also the position of given value
+      </h2>
+      <label for="inputValues">Enter the value</label>
+      <input type="text" id="givenvalue" />
+      <label for="inputValues">search value</label>
+      <input type="text" id="inputValues" />
+      <button onclick="checkValues()">Check Values</button>
+      <div id="result"></div>
+    </div>
+    <script>
+      function checkValues() {
+        let array = ["apple", "Orange", "lemon", "watermelon", "Guava"];
+        let arrayValues = document.getElementById("givenvalue").value;
+        // let array = arrayValues.split(",").map((value) => value.trim());
+        let inputValues = document.getElementById("inputValues").value;
+        let values = inputValues.split(",").map((value) => value.trim());
+
+        for (let i = 0; i < values.length; i++) {
+          let value = values[i];
+
+          if (array.includes(value)) {
+            let index = array.indexOf(value);
+            document.getElementById(
+              "result"
+            ).innerText = `${value} is present at the position of ${index}`;
+            console.log(`${value} found at index ${index}`);
+          } else {
+            console.log(`${value} is not present`);
+            document.getElementById(
+              "result"
+            ).innerText = `${value} is not Present`;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="All.css"/>
+
+   
+  </head>
+  <body>
+    <div class="container">
+      <h2> The sum of all elements </h2>
+      <label for="inputArray">Enter array elements :</label>
+      <input type="text" id="inputArray" placeholder="enter the number" />
+      <button onclick="calculateSum()">Calculate Sum</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function calculateSum() {
+        let array = document.getElementById("inputArray").value;
+        let numbers = array.split(",").map((value) => parseInt(value.trim()));
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++) {
+          sum += numbers[i];
+          document.getElementById(
+            "result"
+          ).innerText = `The total value is ${sum}`;
+        }
+      }
+    </script>
+  </body>
+</html>

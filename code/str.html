@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="All.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <h2>
+        Value is number or string
+      </h2>
+      <label for="inputValues">Enter the value</label>
+      <input type="text" id="givenvalue" />
+      <button onclick="checkValues()">Check Values</button>
+      <div id="result"></div>
+    </div>
+    <script>
+      function checkValues() {
+        let str = document.getElementById("givenvalue").value;
+        let element = str.trim();
+        if (!isNaN(element)) {
+          document.getElementById(
+            "result"
+          ).innerText = `${element} is a number`;
+        } else {
+          document.getElementById(
+            "result"
+          ).innerText = `${element} is a string`;
+        }
+      }
+    </script>
+  </body>
+</html>

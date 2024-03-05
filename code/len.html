@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="All.css"/>
+
+   
+  </head>
+  <body>
+    <div class="container">
+      <h2>
+        String length
+      </h2>
+      <label for="inputValues">Enter the value</label>
+      <input type="text" id="givenvalue" />
+      <button onclick="checkValues()">Check Values</button>
+      <div id="result"></div>
+    </div>
+    <script>
+      function checkValues() {
+        let str = document.getElementById("givenvalue").value;
+        let length=str.length;
+        document.getElementById(
+              "result"
+            ).innerText = `The string length is:${length} `;
+      }
+    </script>
+  </body>
+</html>
