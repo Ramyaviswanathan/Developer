@@ -1,0 +1,58 @@
+.deco a {
+  text-decoration: none;
+  color: white;
+}
+.back-to-top {
+  padding: 7px 12px;
+  border: 1px solid rgba(243, 237, 237, 0.961);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 auto;
+  transition: all 0.3s;
+}
+
+a.back-to-top {
+  position: fixed;
+  bottom: 18px;
+  right: 15px;
+  text-decoration: none;
+  z-index: #999999;
+}
+
+.carousel-inner {
+  text-align: center;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .social-icons {
+  opacity: 1;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 30px;
+  color: rgb(3, 2, 2);
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+.card:hover .card-img-top {
+  opacity: 0.5;
+}
